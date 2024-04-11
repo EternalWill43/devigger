@@ -2,28 +2,34 @@
 
 import { devig } from "./devigger.js";
 import { outrightOdds } from "./datagolf.js";
-import { generateDeviggerUrl, arrayToObjectBuilder } from "./querybuilder.js";
+// TODO: These imports aren't being used, should they be here?
+// import { generateDeviggerUrl, arrayToObjectBuilder } from "./querybuilder";
 import { config } from "dotenv";
 
 config();
 
 //Array that stores all the outrights above EV threshold for all markets
-let evarray = [];
+let EVArray = [];
 
 //devig, push plays above ev threshold to winev array
 //output array to discord
 //add check statement to only devig if anything changed
+/**
+ * @param {string} tour
+ * @param {string} market
+ */
 async function findEV(tour, market) {
   if (tour.toLowerCase() === "pga") {
     if (market.toLowerCase() === "win") {
       let list = ["tour", tour, "market", market];
-      let dgresponse = await outrightOdds(list);
-      await devig(dgresponse, evarray);
-      if (evarray.length > 0) return evarray;
+      let dgResponse = await outrightOdds(list);
+      await devig(dgResponse, EVArray);
+      if (EVArray.length > 0) return EVArray;
       else return "NO EV";
     }
     if (market.toLowerCase() === "top5") {
-      let list = ["tour", tour, "market", market];
+      // TODO: This array isn't being used
+      // let list = ["tour", tour, "market", market];
     }
     if (market.toLowerCase() === "top10") {
     }

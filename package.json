@@ -5,6 +5,9 @@
   "description": "",
   "main": "src/datagolf.js",
   "scripts": {
+    "build": "tsc",
+    "dev": "tsc && node dist/dEViggerbot.js",
+    "start": "node dist/dEViggerbot.js",
     "test": "vitest"
   },
   "keywords": [],
@@ -12,6 +15,7 @@
   "license": "ISC",
   "devDependencies": {
     "prettier": "3.2.5",
+    "typescript": "^5.4.5",
     "vitest": "^1.4.0"
   },
   "dependencies": {

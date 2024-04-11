@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "ESNext", // or whatever target you prefer
+    "module": "ESNext", // or "esnext", depending on your module system
+    "allowJs": true, // Allow JavaScript files to be compiled
+    "checkJs": false, // Set to true if you want TypeScript to type-check your JS files
+    "outDir": "./dist", // Specify an output directory for compiled files
+    "strict": false, // You can enable this gradually for stricter type checks
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitAny": false, // Initially, to ease migration. Turn on later for stricter checks.
+    "strictNullChecks": false, // Turn on later for stricter checks.
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "noEmit": false,
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}
